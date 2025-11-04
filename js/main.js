@@ -92,3 +92,22 @@
     
 })(jQuery);
 
+const modal = document.getElementById('modal'); // Pastikan ID modal adalah 'modal'
+    
+    // 1. FUNGSI UNTUK MEMUNCULKAN POP-UP
+    function openModal() {
+        // Mengubah display dari 'none' menjadi 'flex' agar terlihat
+        modal.style.display = 'flex'; 
+    }
+
+    // 2. FUNGSI UNTUK MENUTUP POP-UP
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Opsional: Menutup pop-up ketika mengklik di luar area modal-content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
