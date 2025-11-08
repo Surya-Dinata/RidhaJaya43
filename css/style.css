@@ -4,6 +4,10 @@
     --secondary: #545454;
     --light: #FDF5EB;
     --dark: #1E1916;
+    /* Variabel dari :root kedua telah dipindah ke sini */
+    --orange: #ee4d2d;
+    --green: #00b14f;
+    --gray: #f5f5f5;
 }
 
 h4,
@@ -248,6 +252,8 @@ h6,
 /*** Product ***/
 .product-item {
     transition: .5s;
+    /* DITAMBAHKAN: Ini akan membuat teks deskripsi produk rata kiri-kanan */
+    text-align: justify;
 }
 
 .product-item:hover {
@@ -406,10 +412,12 @@ h6,
 
 .copyright {
     background: #111111;
+    text-align: center;
 }
 
 .copyright a {
     color: var(--primary);
+    text-align: center;
 }
 
 .copyright a:hover {
@@ -418,277 +426,347 @@ h6,
 
 /*** Map CSS ***/
 .map-container {
-  position: relative;
-  aspect-ratio: 16 / 9;
+    position: relative;
+    aspect-ratio: 16 / 9;
 }
+
 .map-container iframe {
-  width: 100%;
-  height: 100%;
-  filter: grayscale(20%) contrast(110%);
-  transition: filter 0.3s ease;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(20%) contrast(110%);
+    transition: filter 0.3s ease;
 }
+
 .map-container:hover iframe {
-  filter: grayscale(0%) contrast(100%);
+    filter: grayscale(0%) contrast(100%);
 }
 
 /*** Lokasi End ***/
 
 /* Bagian judul */
 .order-section {
-  text-align: center;
-  margin: 60px auto 40px;
-  max-width: 900px;
+    text-align: center;
+    margin: 60px auto 40px;
+    max-width: 900px;
 }
+
 .order-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #1f2937;
-  font-size: 1.6rem;
-  margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
 }
 
 /* Container */
 .order-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 /* Kartu tombol */
 .order-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  padding: 12px 20px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #374151;
-  font-size: 1rem;
-  transition: all 0.25s ease;
-  transform: translateY(0);
-  min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #374151;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+    transform: translateY(0);
+    min-width: 150px;
 }
 
-.order-card i, .order-card svg {
-  flex-shrink: 0;
+.order-card i,
+.order-card svg {
+    flex-shrink: 0;
 }
 
 /* Efek hover */
 .order-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.15);
-  color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+    color: #fff;
 }
 
 /* Warna tiap platform */
-.ig:hover { background: radial-gradient(circle at top left, #f58529, #dd2a7b, #8134af); }
-.wa:hover { background: linear-gradient(135deg, #25D366, #128C7E); }
-.gf:hover { background: linear-gradient(135deg, #00B14F, #00A14A); }
-.gof:hover { background: linear-gradient(135deg, #EE2737, #B81C29); }
-.sf:hover { background: linear-gradient(135deg, #FF5722, #F44336); }
-.mx:hover { background: linear-gradient(135deg, #FFD600, #F6C700); color: #000; }
+.ig:hover {
+    background: radial-gradient(circle at top left, #f58529, #dd2a7b, #8134af);
+}
+
+.wa:hover {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.gf:hover {
+    background: linear-gradient(135deg, #00B14F, #00A14A);
+}
+
+.gof:hover {
+    background: linear-gradient(135deg, #EE2737, #B81C29);
+}
+
+.sf:hover {
+    background: linear-gradient(135deg, #FF5722, #F44336);
+}
+
+.mx:hover {
+    background: linear-gradient(135deg, #FFD600, #F6C700);
+    color: #000;
+}
 
 /* Animasi lembut */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
 }
+
 .order-card {
-  animation: float 4s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
-.order-card:nth-child(2){animation-delay:0.2s}
-.order-card:nth-child(3){animation-delay:0.4s}
-.order-card:nth-child(4){animation-delay:0.6s}
-.order-card:nth-child(5){animation-delay:0.8s}
-.order-card:nth-child(6){animation-delay:1s}
+
+.order-card:nth-child(2) {
+    animation-delay: 0.2s
+}
+
+.order-card:nth-child(3) {
+    animation-delay: 0.4s
+}
+
+.order-card:nth-child(4) {
+    animation-delay: 0.6s
+}
+
+.order-card:nth-child(5) {
+    animation-delay: 0.8s
+}
+
+.order-card:nth-child(6) {
+    animation-delay: 1s
+}
 
 /* Responsif */
 @media (max-width: 500px) {
-  .order-card {
-    font-size: 0.9rem;
-    padding: 10px 14px;
-    min-width: 130px;
-  }
+    .order-card {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+        min-width: 130px;
+    }
 }
 
 /*Produk 1*/
-    :root {
-  --orange: #ee4d2d;
-  --green: #00b14f;
-  --gray: #f5f5f5;
-  --dark: #333;
-  --light: #fff;
-}
+/* DIHAPUS: Blok :root kedua telah dihapus karena dobel */
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--gray);
-  margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--gray);
+    margin: 0;
 
 }
 
 h1 {
-  text-align: center;
-  color: var(--dark);
-  margin-bottom: 30px;
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 30px;
 }
 
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 15px;
-  padding-bottom: 10 px;
-  padding-top: 10px;
-  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 15px;
+    /* DIPERBAIKI: Typo spasi dihapus */
+    padding-bottom: 10px;
+    padding-top: 10px;
+
 }
 
 .product-card {
-  background: var(--light);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: var(--light);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
 .product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
+
 .product-card .info {
-  padding: 12px 14px;
-  position: relative;
+    padding: 12px 14px;
+    position: relative;
 }
+
 .product-card .name {
-  font-weight: 600;
-  color: var(--dark);
+    font-weight: 600;
+    color: var(--dark);
 }
+
 .product-card .price {
-  color: var(--orange);
-  font-weight: 600;
-  margin-top: 6px;
+    color: var(--orange);
+    font-weight: 600;
+    margin-top: 6px;
 }
+
 .badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: var(--orange);
-  color: white;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 6px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--orange);
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
 }
+
 .badge.diskon {
-  background: #ff9800;
+    background: #ff9800;
 }
 
 /* Modal */
 .modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
+
 .modal-content {
-  background: var(--light);
-  border-radius: 14px;
-  max-width: 600px;
-  width: 90%;
-  padding: 20px;
-  position: relative;
-  animation: popup 0.3s ease;
+    background: var(--light);
+    border-radius: 14px;
+    max-width: 600px;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    animation: popup 0.3s ease;
 }
+
 @keyframes popup {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
+
 .modal-content img {
-  width: 100%;
-  border-radius: 10px;
-  height: 280px;
-  object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    height: 280px;
+    object-fit: cover;
 }
+
 .modal-content h2 {
-  margin-top: 16px;
-  color: var(--dark);
+    margin-top: 16px;
+    color: var(--dark);
 }
+
 .modal-content p {
-  color: #555;
-  line-height: 1.5;
-  font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
+
 .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 26px;
-  color: #999;
-  cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #999;
+    cursor: pointer;
 }
+
 .platforms {
-  display: flex;
-  gap: 10px;
-  margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
 }
-.btn {
-  flex: 1;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.2s;
+
+/* DIPERBAIKI: Selector diubah agar tidak konflik dengan .btn utama */
+.platforms .btn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
 }
-.btn:hover {
-  opacity: 0.85;
+
+/* DIPERBAIKI: Selector diubah agar tidak konflik dengan .btn utama */
+.platforms .btn:hover {
+    opacity: 0.85;
 }
+
 .btn-wa {
-  background: #25D366;
+    background: #25D366;
 }
+
 .btn-gofood {
-  background: #00b14f;
+    background: #00b14f;
 }
+
 .btn-shopee {
-  background: var(--orange);
+    background: var(--orange);
 }
 
 /* --- Styling untuk Logo Kedai di Modal (UKURAN DIPERKECIL) --- */
 .modal-content .modal-logo {
     /* UBAH NILAI MAX-WIDTH INI UNTUK MENGECILKAN LOGO */
-    max-width: 100px; /* Diperkecil dari 150px menjadi 100px */
-    
-    height: auto;     
-    display: block;   
-    margin: 0 auto 15px auto; 
-    border-radius: 10px; 
-    object-fit: contain; 
+    max-width: 100px;
+    /* Diperkecil dari 150px menjadi 100px */
+
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
+    object-fit: contain;
 }
 
 /* --- Styling untuk Judul "Pesan Sekarang" (TIDAK BERUBAH) --- */
 .modal-content .modal-title-order {
     text-align: center;
-    color: var(--dark); 
-    font-size: 1.8rem; 
-    font-weight: 700;  
-    margin-top: 0;     
-    margin-bottom: 25px; 
+    color: var(--dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
+
 /* ... (Style modal lainnya tidak berubah) ... */
